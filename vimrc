@@ -1,14 +1,14 @@
 " --- Plugins ---------------------------------------------------------------
-"
 call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " --- General settings ------------------------------------------------------
 " Note, this needs to go after the plugins. Maybe because of Plug?
-"
 syntax on
 
 colorscheme gruvbox
