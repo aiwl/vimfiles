@@ -9,6 +9,7 @@ mklink /D %HOMEPATH%\vimfiles<path_to_repo/vimfiles>
 ```
 
 macOS
+```
 ln -s <path_to_repo/vimfiles> ~/.vim
 ```
 2. Install plugins
