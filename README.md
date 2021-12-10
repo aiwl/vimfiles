@@ -2,11 +2,13 @@ My vim configuration for use on Windows *and* macOS (and hopefully other \*nix o
 
 # Setup
 1. Create a symbolic link to this folder.
+
 Windows
 ```
 mklink /D %HOMEPATH%\vimfiles<path_to_repo/vimfiles>
-macOS
 ```
+
+macOS
 ln -s <path_to_repo/vimfiles> ~/.vim
 ```
 2. Install plugins
