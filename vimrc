@@ -14,8 +14,12 @@ syntax on
 colorscheme gruvbox
 set background=dark
 
+set backspace=2
 set noerrorbells
+set visualbell
 set noswapfile
+set ruler
+set laststatus=2
 
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -25,6 +29,9 @@ set nu
 
 " Don't auto indent for C++ namespaces
 set cino=N-s
+
+" Makes the working directory always the same as file we are editing.
+set autochdir
 
 set guifont=consolas:h10
 set guioptions-=m
@@ -45,6 +52,7 @@ inoremap jk <Esc>
 noremap <C-o> :o.<CR>
 noremap <C-s> :w<CR>
 noremap <C-q> :q<CR>
+noremap <C-f> :GFiles<CR>
 
 " Scrolling
 map <C-k> 5k
@@ -58,4 +66,3 @@ noremap <Right> <NOP>
 
 " Remove all trailing whitespace characters
 nnoremap <Leader>r :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w<CR>
-
