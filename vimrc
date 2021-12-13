@@ -57,5 +57,5 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " Remove all trailing whitespace characters
-nnoremap <Leader>r :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w
+nnoremap <Leader>r :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w<CR>
 
