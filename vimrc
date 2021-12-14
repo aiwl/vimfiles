@@ -44,6 +44,13 @@ let &colorcolumn=join(range(80,999),",")
 
 " --- Key mappings ----------------------------------------------------------
 
+" Map leader to space
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+"
+map <Leader> <Plug>(easymotion-prefix)
+
 " Quicker way to going back to NORMAL mode, without having to reach
 " the Esc key.
 inoremap jk <Esc>
@@ -63,6 +70,13 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Pointer dereferencing shortcut.
+inoremap ;; ->
+
+" Substitutions and finding
+noremap <Leader>s :s//gc<left><left><left>
+noremap <Leader>S :%s//gc<left><left><left>
 
 " Remove all trailing whitespace characters
 nnoremap <Leader>r :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w<CR>
