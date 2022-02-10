@@ -14,6 +14,9 @@ syntax on
 colorscheme gruvbox
 set background=dark
 
+" This removes the tilde in the numbers row. It just works with vim8.
+highlight EndOfBuffer ctermfg=black ctermbg=black
+
 set backspace=2
 set noerrorbells
 set visualbell
