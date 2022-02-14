@@ -2,7 +2,10 @@
 call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -11,11 +14,10 @@ call plug#end()
 " Note, this needs to go after the plugins. Maybe because of Plug?
 syntax on
 
-colorscheme gruvbox
-set background=dark
+colorscheme solarized
+set background=light
 
-" This removes the tilde in the numbers row. It just works with vim8.
-highlight EndOfBuffer ctermfg=black ctermbg=black
+let g:airline_theme='solarized'
 
 set backspace=2
 set noerrorbells
@@ -30,13 +32,15 @@ set smartindent
 set expandtab
 set nu
 
+set splitbelow
+
 " Don't auto indent for C++ namespaces
 set cino=N-s
 
 " Makes the working directory always the same as file we are editing.
 set autochdir
 
-set guifont=consolas:h10
+set guifont=inconsolata:h14
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r  "remove right-hand scroll bar
