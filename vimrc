@@ -4,18 +4,25 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
-Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'cdelledonne/vim-cmake'
 call plug#end()
 
 " --- General settings ------------------------------------------------------
 " Note, this needs to go after the plugins. Maybe because of Plug?
 syntax on
 
+set guifont=DinaRemaster:h16
+set noantialias
+
 colorscheme gruvbox
 set background=dark
-
 let g:airline_theme='gruvbox'
+let g:airline_section_c = '%t'
+
 
 set backspace=2
 set noerrorbells
@@ -38,7 +45,6 @@ set cino=N-s
 " Makes the working directory always the same as file we are editing.
 set autochdir
 
-set guifont=consolas:h10
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r  "remove right-hand scroll bar
@@ -49,6 +55,10 @@ let &colorcolumn=join(range(80,999),",")
 
 set encoding=utf-8
 set fileencoding=utf-8
+
+" Set cursor settings
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " --- Key mappings ----------------------------------------------------------
 
@@ -67,7 +77,7 @@ inoremap jk <Esc>
 noremap <C-o> :o.<CR>
 noremap <C-s> :w<CR>
 noremap <C-q> :q<CR>
-noremap <C-f> :CtrlP<CR>
+noremap <C-f> :GFiles<CR>
 
 " Scrolling
 map <C-k> 5k
@@ -126,4 +136,4 @@ set shortmess+=c
 " Use Ctrl+Space to trigger completion.
 " NOTE: This does not seem to work on all platforms/terminals.
 "       Use another shortcut in that case, e.g. Ctrl+k.
-inoremap <silent><expr> <C-space> coc#refresh()
+inoremap <silent><expr> <C-k> coc#refresh()
