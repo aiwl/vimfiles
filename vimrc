@@ -23,7 +23,6 @@ set background=dark
 let g:airline_theme='gruvbox'
 let g:airline_section_c = '%t'
 
-
 set backspace=2
 set noerrorbells
 set visualbell
@@ -60,24 +59,36 @@ set fileencoding=utf-8
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" Remove the tilde
+highlight EndOfBuffer ctermfg=bg ctermbg=bg
+highlight EndOfBuffer guifg=bg guibg=bg
+
+set fillchars+=vert:\|
+hi vertsplit guifg=bg guibg=bg ctermfg=bg ctermbg=bg
+
+
 " --- Key mappings ----------------------------------------------------------
 
 " Map leader to space
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-"
-map <Leader> <Plug>(easymotion-prefix)
-
-" Quicker way to going back to NORMAL mode, without having to reach
+" Quicker way to going back to NORMAL mode without having to reach
 " the Esc key.
 inoremap jk <Esc>
 
+" Splitting
+noremap <Leader>v :vsplit<CR>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
 " Open files, finding files, save & quit
-noremap <C-o> :o.<CR>
-noremap <C-s> :w<CR>
-noremap <C-q> :q<CR>
-noremap <C-f> :GFiles<CR>
+noremap <leader>o :o.<CR>
+noremap <leader>w :w<CR>
+noremap <leader>q :q<CR>
+noremap ff :GFiles<CR>
 
 " Scrolling
 map <C-k> 5k
