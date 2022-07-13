@@ -4,24 +4,33 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
+Plug 'nlknguyen/papercolor-theme'
+Plug 'hzchirs/vim-material'
+Plug 'sainnhe/everforest'
+Plug 'rakr/vim-one'
 Plug 'altercation/vim-colors-solarized'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'cdelledonne/vim-cmake'
 call plug#end()
 
 " --- General settings ------------------------------------------------------
 " Note, this needs to go after the plugins. Maybe because of Plug?
 syntax on
 
-set guifont=DinaRemaster:h16
-set noantialias
+set guifont=Source\ Code\ Pro\ for\ Powerline:h10
+"set guifont=Fira\ Mono\ for\ Powerline:h11
+"set noantialias
 
-colorscheme gruvbox
+colorscheme everforest
 set background=dark
-let g:airline_theme='gruvbox'
-let g:airline_section_c = '%t'
+let g:airline_theme='everforest'
+let g:airline_section_c = '%t %m '
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
 set backspace=2
 set noerrorbells
@@ -29,6 +38,7 @@ set visualbell
 set noswapfile
 set ruler
 set laststatus=2
+set statusline=[%n]\ %<%f%h%m
 
 set tabstop=4 softtabstop=4
 set shiftwidth=4
